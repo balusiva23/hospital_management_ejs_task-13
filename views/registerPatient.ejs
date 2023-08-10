@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Register Patient</title>
+  <link rel="stylesheet" type="text/css" href="/css/styles.css">
+</head>
+
+<body>
+ 
+  <%- include('nav.ejs') %>
+  <div class="main">
+  <div class="register-container">
+    <h1>Register Patient</h1>
+    <form action="/api/admin/register/" method="post">
+      <input type="text" name="patient_id" placeholder="Patient ID" required>
+      <input type="text" name="patient_name" placeholder="Patient Name" required>
+      <input type="number" name="patient_age" placeholder="Patient Age" required>
+      <input type="text" name="patient_address" placeholder="Patient Address" required>
+      <input type="text" name="patient_mobileNo" placeholder="Patient Mobile No" required>
+      <input type="text" name="patient_disease" placeholder="Patient Disease" required>
+      <button type="submit">Register</button>
+    </form>
+  </div>
+  </div>
+</body>
+</html>

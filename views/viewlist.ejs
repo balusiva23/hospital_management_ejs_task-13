@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Patient List</title>
+  <link rel="stylesheet" type="text/css" href="/css/styles.css">
+</head>
+<body>
+   
+  <%- include('nav.ejs') %>
+  <div class="main">
+  <div class="patient-list-container">
+    <h1>Patient List</h1>
+    <table>
+      <tr>
+        <th>Patient ID</th>
+        <th>Patient Name</th>
+        <th>Patient Age</th>
+        <th>Patient Address</th>
+        <th>Patient Mobile No</th>
+        <th>Patient Disease</th>
+        <th>Actions</th>
+      </tr>
+      <% patients.forEach(patient => { %>
+        <tr>
+          <td><%= patient.patient_id %></td>
+          <td><%= patient.patient_name %></td>
+          <td><%= patient.patient_age %></td>
+          <td><%= patient.patient_address %></td>
+          <td><%= patient.patient_mobileNo %></td>
+          <td><%= patient.patient_disease %></td>
+          <td>
+            <a href="/api/admin/update/<%= patient._id %>">Update</a>
+            <form action="/api/admin/delete/<%= patient._id %>" method="post">
+              <input type="hidden" name="patient_id" value="64d46d2aef7bff1b0760b7f9">
+              <button type="submit">Delete</button>
+            </form>
+          </td>
+        </tr>
+      <% }); %>
+    </table>
+  </div>
+  </div>
+</body>
+</html>

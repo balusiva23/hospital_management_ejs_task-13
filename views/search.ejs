@@ -1,0 +1,25 @@
+<!-- views/search.ejs -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Patient List</title>
+  <link rel="stylesheet" type="text/css" href="/css/styles.css">
+</head >
+<body class="">
+   
+  <%- include('nav.ejs') %>
+  <div class="main">
+  <div class="register-container">
+    <h1>Search  Patient</h1>
+    <form action="/api/admin/search/" method="post">
+      <input type="text" name="patient_id" placeholder="Enter Patient ID"  required>
+     
+      <button type="submit">Search</button>
+
+    
+    </form>
+    <!-- <a href="/api/admin/home" class="btn1 ">Back to home page</a>  -->
+  </div>
+  </div>
+</body>
+</html>

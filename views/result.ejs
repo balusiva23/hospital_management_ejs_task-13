@@ -1,0 +1,32 @@
+<!-- views/updatepage.ejs -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Search  Result</title>
+  <link rel="stylesheet" type="text/css" href="/css/styles.css">
+</head>
+<body >
+   
+  <%- include('nav.ejs') %>
+  <div class="main">
+  <div class="update-container">
+    <h1>Search  Result : <%= patient.patient_name %></h1>
+    <h1></h1>
+    <form action="/api/admin/update" method="post">
+      <input type="hidden" name="id" value="<%= patient.patient_id %>" readonly>
+      <input type="text" name="patient_id" value="<%= patient.patient_id %>" readonly>
+      <input type="text" name="patient_name" value="<%= patient.patient_name %>" readonly>
+      <input type="number" name="patient_age" value="<%= patient.patient_age %>" readonly>
+      <input type="text" name="patient_address" value="<%= patient.patient_address %>" readonly>
+      <input type="text" name="patient_mobileNo" value="<%= patient.patient_mobileNo %>" readonly>
+      <input type="text" name="patient_disease" value="<%= patient.patient_disease %>" readonly style="
+      margin-bottom: 25px;">
+       </form>
+      <a href="/api/admin/home" class="btn ">Back to home page</a> 
+   
+   
+  </div>
+  </div>
+  
+</body>
+</html>
